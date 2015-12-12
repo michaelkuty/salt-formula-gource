@@ -49,7 +49,7 @@ gource_{{ video_name }}_{{ source_name }}_append_log:
 gource_{{ video_name }}_stream:
   cmd.run:
     - unless: test -e {{ client.dir.workspace }}/{{ video_name }}/video/stream
-    - name: gource --fullscreen --disable-progress -r 60 -s 0.25 --stop-at-end --user-scale 2 --highlight-all-users {{ client.dir.workspace }}/{{ video_name }}/log.txt -o {{ client.dir.workspace }}/{{ video_name }}/video/stream
+    - name: gource -1280x720 --multi-sampling --hide filenames,progress,mouse --disable-progress -r 60 -s 0.25 --stop-at-end --user-scale 2 --highlight-all-users {{ client.dir.workspace }}/{{ video_name }}/log.txt -o {{ client.dir.workspace }}/{{ video_name }}/video/stream
     - require:
       - pkg: gource-packages
 
