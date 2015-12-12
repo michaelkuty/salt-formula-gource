@@ -1,0 +1,5 @@
+parameters:
+  gource:
+    _support:
+      sphinx:
+        enabled: true

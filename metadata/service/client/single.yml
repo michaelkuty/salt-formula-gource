@@ -1,0 +1,8 @@
+applications:
+- gource
+classes:
+- service.gource.support
+parameters:
+  gource:
+    client:
+      enabled: true

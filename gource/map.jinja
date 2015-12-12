@@ -1,0 +1,14 @@
+
+{%- set source_engine = salt['pillar.get']('gource:client:source:engine') %}
+
+{%- set workspace = pillar['gource']['client'].get('workspace', '/tmp') %}
+
+{%- load_yaml as base_defaults %}
+Debian:
+  pkgs:
+  - gource
+  dir:
+    workspace: {{ workspace }}
+{%- endload %}
+
+{%- set client = salt['grains.filter_by'](base_defaults, merge=salt['pillar.get']('gource:client')) %}
